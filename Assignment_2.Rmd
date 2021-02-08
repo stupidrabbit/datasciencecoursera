@@ -1,0 +1,26 @@
+---
+title: "My Assignment"
+author: "Alex Mkrtchian"
+date: '8 Feb 2021'
+output: ioslides_presentation
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning=FALSE)
+```
+## Description
+This is a 3D scatterplot build with plotly for Iris dataset. Values of petal length, petal width and sepal length of iris flowers are shown on separate axes while color codes the species.
+  
+You can rotate a plot around its axes.
+
+```{r}
+require (plotly)
+require (dplyr)
+data (iris)
+```
+***
+```{r}
+fig <- plot_ly(data = iris, x = ~Petal.Length, y = ~Petal.Width, z = ~Sepal.Length, type = "scatter3d", color = ~Species, mode = "markers") %>% layout (title = 'Iris plot')
+fig
+```
+
+## Thanks
